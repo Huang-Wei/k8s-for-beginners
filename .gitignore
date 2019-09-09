@@ -1,3 +1,2 @@
-k8s-for-beginners
-webapp
 *.log
+/main
