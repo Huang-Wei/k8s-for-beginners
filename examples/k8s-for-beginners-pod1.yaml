@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: k8s-for-beginners
+  labels:
+    tier: frontend
+spec:
+  containers:
+  - name: pause
+    image: hweicdl/k8s-for-beginners-pod:v0.0.1

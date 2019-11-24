@@ -10,13 +10,13 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-w' -o main cmd/[folder
 And then use Docker to build the image:
 
 ```
-docker build -t hweicdl/memconsumer:v0.0.1 cmd/[folder]/
+docker build -t hweicdl/[folder]:v0.0.1 cmd/[folder]/
 ```
 
-## Webapp
+## webapp
 
 `Webapp` is a simple HTTP server demonstrating how to build a simple Docker image.
 
-## Memconsumer
+## memconsumer
 
 `Memconsumer` is an application which consumes a fixed amount of RAM. It's used to demonstrate how container runtime manages containers which overuse memories.
