@@ -1,22 +1,33 @@
 # k8s-for-beginners
 
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-w' -o main cmd/[folder]/*.go
+## Build
 
-> replace `[folder]` with "webapp" or "memconsumer"
+#### Go build
+
+- go mod vendor
+- CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-w' -o main cmd/[app]/*.go
+    > replace `[app]` with "webapp" or "memconsumer" or "pageview"
+
+Explanations:
 
 - `CGO_ENABLED=0`: disable `CGO` to generate a statically linked binary so that it can be packed with some minimized image like `scratch` or `alpine`.
 - `-ldflags '-w'`: disable debugging to make the binary size smaller.
 
-And then use Docker to build the image:
+#### Docker build
 
-```
-docker build -t hweicdl/[folder]:v0.0.1 cmd/[folder]/
-```
+- docker build -t hweicdl/[app]:v0.0.1 cmd/[app]/
+    > replace `[app]` with "webapp" or "memconsumer" or "pageview"
 
-## webapp
+## Applications
 
-`Webapp` is a simple HTTP server demonstrating how to build a simple Docker image.
+#### webapp
 
-## memconsumer
+`webapp` is a simple HTTP server demonstrating how to build a simple Docker image.
 
-`Memconsumer` is an application which consumes a fixed amount of RAM. It's used to demonstrate how container runtime manages containers which overuse memories.
+#### memconsumer
+
+`memconsumer` is an application which consumes a fixed amount of RAM. It's used to demonstrate how container runtime manages containers which overuse memories.
+
+#### pageview
+
+`pageview` is an web application which records the page view and sync with backend redis db.
