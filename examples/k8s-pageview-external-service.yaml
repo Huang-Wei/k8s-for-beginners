@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: k8s-for-beginners
+  name: k8s-pageview
 spec:
   selector:
     tier: frontend
@@ -9,4 +9,3 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
-

@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-for-beginners
+  name: k8s-pageview
 spec:
+  # replicas: 1
   replicas: 3
   selector:
     matchLabels:
@@ -13,6 +14,6 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: k8s-for-beginners
-        image: hweicdl/k8s-for-beginners:v0.0.1
+      - name: k8s-pageview
+        image: hweicdl/pageview:v0.0.2
 

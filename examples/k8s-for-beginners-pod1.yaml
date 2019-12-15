@@ -6,5 +6,6 @@ metadata:
     tier: frontend
 spec:
   containers:
-  - name: pause
-    image: hweicdl/k8s-for-beginners-pod:v0.0.1
+  - name: k8s-for-beginners
+    image: hweicdl/k8s-for-beginners:v0.0.1
+
